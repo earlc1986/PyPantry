@@ -61,10 +61,11 @@ def viewIngredient(ingredient):
             ingredients = Ingredient.query.all()
 
             return render_template('viewingredients.html', ingredients = ingredients)
-        elif request.form['submit'] == 'Edit':
-            pass
         else:
-            pass
+            ingredient_view.ingredient_onhand = request.form.get('onhand') 
+            db.session.commit()
+            return redirect(url_for('index', _external = False))
+
     elif request.method == "GET":
         return render_template('ingredient.html', ingredient = ingredient_view)
 

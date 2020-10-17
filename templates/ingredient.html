@@ -25,13 +25,14 @@
         <td>Sodium: </td><td>{{ ingredient.ingredient_sodium }}</td>
     </tr>
     <tr>
-        <td>On Hand:</td><td>{{ ingredient.ingredient_onhand }}</td>
+        <td>On Hand:</td>
+        <td>{{ ingredient.ingredient_onhand }}</td>
+        <td><form action='{{ url_for("viewIngredient", ingredient = ingredient.upc) }}' method="POST"> <input type="text" name="onhand"><input type='submit' name='submit' value='Update'> </form></td>
     </tr>
 </table>
 
 <form name = "" method="POST">
     <input type="submit" name="submit" value='Delete'>
-    <input type='submit' name='submit' value='Edit'>
 </form>
 
 {% endblock %}

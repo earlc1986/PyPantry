@@ -17,3 +17,5 @@ class addIngredientForm(FlaskForm):
     sodium = StringField("Sodium (In Milligrams):", validators=[DataRequired()])
     onhand = StringField("Number Currently On Hand:", validators=[DataRequired()])
     submit = SubmitField('Submit')
+
+
