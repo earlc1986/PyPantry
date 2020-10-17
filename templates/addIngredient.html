@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Meal Planner {% endblock %}
+
+{% block content %}
+<h1>Add Ingredient To Database</h1>
+<form action='/ingredients/addIngredient' method="POST">
+    {{ template_form.hidden_tag() }}
+    {{ template_form.ingredientUPC.label }}
+    {{ template_form.ingredientUPC() }} <br />
+    {{ template_form.ingredientBrand.label }}
+    {{ template_form.ingredientBrand() }}
+    {{ template_form.ingredientName.label }}
+    {{ template_form.ingredientName() }} <br />
+    {{ template_form.serving_size.label }}
+    {{ template_form.serving_size() }}
+    {{ template_form.serving_unit.label }}
+    {{ template_form.serving_unit() }} <br />
+    {{ template_form.calories.label }} 
+    {{ template_form.calories() }}
+    {{ template_form.protein.label }}
+    {{ template_form.protein() }}
+    {{ template_form.totalCarbs.label }}
+    {{ template_form.totalCarbs() }}
+    {{ template_form.fiberCarbs.label }}
+    {{ template_form.fiberCarbs() }}
+    {{ template_form.fat.label }}
+    {{ template_form.fat() }}
+    {{ template_form.sodium.label }}
+    {{ template_form.sodium() }} <br />
+    {{ template_form.onhand.label }}
+    {{ template_form.onhand() }}
+    {{ template_form.submit() }}
+
+</form>
+
+
+{% endblock %}

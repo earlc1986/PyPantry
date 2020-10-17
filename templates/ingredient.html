@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ ingredient.ingredient_name }}{% endblock %}
+
+{% block content %}
+<table>
+    <th>{{ ingredient.brand }} {{ ingredient.ingredient_name }}</th>
+    <tr>
+        <td>Serving Size: </td><td>{{ ingredient.serving_size }} {{ ingredient.serving_unit }}</td>
+        
+    </tr>
+    <tr>
+        <td>Calories: </td><td>{{ ingredient.ingredient_calorie }} </td>
+    </tr>
+    <tr>
+        <td>Protein:</td><td>{{ ingredient.protein_grams }}</td>
+    </tr>
+    <tr>
+        <td>Total Carbs: </td><td>{{ ingredient.carb_total }}</td>
+        <tr>
+            <td>    Carbs From Fiber: </td><td>{{ ingredient.carb_fiber }}</td>
+        </tr>
+    </tr>
+    <tr>
+        <td>Sodium: </td><td>{{ ingredient.ingredient_sodium }}</td>
+    </tr>
+    <tr>
+        <td>On Hand:</td><td>{{ ingredient.ingredient_onhand }}</td>
+    </tr>
+</table>
+
+<form name = "" method="POST">
+    <input type="submit" name="submit" value='Delete'>
+    <input type='submit' name='submit' value='Edit'>
+</form>
+
+{% endblock %}

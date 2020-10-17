@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Meal Planner {% endblock %}
+
+{% block content %}
+{% for ingredient in ingredients %}
+{% if ingredient.brand %}
+<p><a href= '{{ url_for("viewIngredient", ingredient = ingredient.upc) }}'>{{ingredient.brand }} {{ ingredient.ingredient_name }} </a> </p>
+{% else %}
+<p><a href= '{{ url_for("viewIngredient", ingredient = ingredient.upc) }}'>{{ ingredient.ingredient_name }}</a></p>
+{% endif %}
+{% endfor %}
+{% endblock %}
